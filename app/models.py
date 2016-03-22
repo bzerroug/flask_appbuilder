@@ -40,7 +40,7 @@ Now=datetime.datetime.now()
 class orders(Model):
     __bind_key__ = 'postgresql'
     Base = automap_base()
-    engine = create_engine('postgresql://dataware:phahvaTh4yua3ie@192.168.58.19:5432/dataware')
+    engine = create_engine('***')
 
     Base.prepare(engine, reflect=True)
     Base.metadata.reflect(engine)
@@ -60,7 +60,7 @@ class orders(Model):
 class customer_stats(Model):
     __bind_key__ = 'postgresql'
     Base = automap_base()
-    engine = create_engine('postgresql://dataware:phahvaTh4yua3ie@192.168.58.19:5432/dataware')
+    engine = create_engine('***')
 
     Base.prepare(engine, reflect=True)
     Base.metadata.reflect(engine)
