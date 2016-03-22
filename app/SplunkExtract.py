@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 
 def process_compute_slot_filling(X):
-    splunk_service=client.connect(host='94.124.133.189', port=8089, username='bzerroug', password='Bz3rr0ug')    
+    splunk_service=client.connect(host='***', port=***, username='***', password='***')    
     
     logger.info('Computing slot filling')
     
