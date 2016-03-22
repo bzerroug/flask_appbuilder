@@ -3,14 +3,14 @@ from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_D
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Your App secret key
-SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
+SECRET_KEY = '***'
 
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 #SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
 #SQLALCHEMY_DATABASE_URI = 'postgresql://dataware:phahvaTh4yua3ie@192.168.58.19:5432/dataware'
 SQLALCHEMY_BINDS = {
-    'postgresql' : 'postgresql://dataware:phahvaTh4yua3ie@192.168.58.19:5432/dataware'
+    'postgresql' : 'postgresql://***'
 }
 
 
