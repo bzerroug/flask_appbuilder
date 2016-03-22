@@ -258,7 +258,7 @@ def fillGA():
 #######################################################################################################
 
 #Base = automap_base()
-#engine = create_engine('postgresql://dataware:phahvaTh4yua3ie@192.168.58.19:5432/dataware')
+#engine = create_engine('')
 #Base.prepare(engine, reflect=True)        
 #orders = Base.classes.orders
 #session = sessionmaker(bind=engine)()    
