@@ -92,7 +92,6 @@ def process_compute_slot_filling(X):
 
 if __name__ == '__main__':
 
-    #splunk_service = client.connect(host='94.124.133.189', port=8089, username='bzerroug', password='Bz3rr0ug')
 
     df2=process_compute_slot_filling(2)
     
