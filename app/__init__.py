@@ -1,8 +1,6 @@
 import logging
 from flask import Flask
 from flask.ext.appbuilder import SQLA, AppBuilder
-from .sec import MySecurityManager
-from flask.ext.appbuilder.menu import Menu
 """
  Logging configuration
 """
@@ -14,7 +12,6 @@ app = Flask(__name__)
 app.config.from_object('config')
 db = SQLA(app)
 appbuilder = AppBuilder(app, db.session)
-#appbuilder = AppBuilder(app, db.session, menu=Menu(reverse=False), security_manager_class=MySecurityManager)
 """
 from sqlalchemy.engine import Engine
 from sqlalchemy import event
