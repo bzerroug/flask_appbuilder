@@ -1,9 +1,10 @@
 import logging
 from flask import Flask
 from flask.ext.appbuilder import SQLA, AppBuilder
-"""
- Logging configuration
-"""
+
+
+__version__ = '0.1.0'
+
 
 logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
@@ -25,5 +26,4 @@ def set_sqlite_pragma(dbapi_connection, connection_record):
     cursor.close()
 """    
 
-from app import views
-
+from . import views

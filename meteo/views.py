@@ -21,7 +21,7 @@ from sqlalchemy.orm import sessionmaker
 
 from firstScriptGA import getSessions
 from models import orders, customer_stats, slot_filling, THE_KPIS, GA, NbOrders
-from app import appbuilder, db
+from . import appbuilder, db
 from SplunkExtract import process_compute_slot_filling
 
 #from flask import g
