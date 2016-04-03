@@ -13,6 +13,7 @@ DEPENDENCIES = [
     'urllib3',
     'google-api-python-client',
     'pyasn1>=0.1.8',
+    'splunk-sdk',
 ]
 
 TEST_DEPENDENCIES = [
