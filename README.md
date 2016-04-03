@@ -5,7 +5,7 @@ Meteo for dataware
     ```
     To use the sdk Splunk, create a file
 
-     Splunk host (default: localhost)
+    Splunk host (default: localhost)
     host=localhost
     # Splunk admin port (default: 8089)
     port=8089
