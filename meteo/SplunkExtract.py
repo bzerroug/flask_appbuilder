@@ -1,4 +1,5 @@
 import sys
+import os
 from datetime import datetime, timedelta
 from time import sleep
 import splunklib.results as results
@@ -6,15 +7,17 @@ import splunklib.client as client
 import pandas as pd
 import sys
 import logging
-#import slacker
-
-#from .. import parse_args, setup_logging
 
 logger = logging.getLogger(__name__)
 
-
 def process_compute_slot_filling(X):
-    splunk_service=client.connect(host='***', port=***, username='***', password='***')    
+    from config import splunk_conf
+    host_splunk=splunk_conf["host_splunk"]
+    port_splunk=splunk_conf["port_splunk"]
+    username_splunk=splunk_conf["username_splunk"]
+    password_splunk=splunk_conf["password_splunk"]
+    
+    splunk_service=client.connect(host=host_splunk, port=port_splunk, username=username_splunk, password=password_splunk)    
     
     logger.info('Computing slot filling')
     

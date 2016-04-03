@@ -3,38 +3,26 @@ from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_D
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Your App secret key
-SECRET_KEY = '***'
+SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
-#SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
-#SQLALCHEMY_DATABASE_URI = 'postgresql://dataware:phahvaTh4yua3ie@192.168.58.19:5432/dataware'
-SQLALCHEMY_BINDS = {
-    'postgresql' : 'postgresql://***'
-}
 
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+
+SQLALCHEMY_BINDS = {
+    'postgresql' : 'postgresql://dataware-ro:jAsPM3xE9ul9WFi@10.230.0.140:5432/dataware'
+}
 
 
 # Flask-WTF flag for CSRF
 CSRF_ENABLED = True
 
-#------------------------------
-# GLOBALS FOR APP Builder 
-#------------------------------
-# Uncomment to setup Your App name
-#APP_NAME = "My App Name"
 
-# Uncomment to setup Setup an App icon
-#APP_ICON = "static/img/logo.jpg"
+APP_NAME = "Meteo Auchan Direct"
 
-#----------------------------------------------------
+
 # AUTHENTICATION CONFIG
-#----------------------------------------------------
-# The authentication type
-# AUTH_OID : Is for OpenID
-# AUTH_DB : Is for database (username/password()
-# AUTH_LDAP : Is for LDAP
-# AUTH_REMOTE_USER : Is for using REMOTE_USER from web server
+
 AUTH_TYPE = AUTH_DB
 
 # Uncomment to setup Full admin role name
@@ -60,22 +48,12 @@ MAIL_PASSWORD = 'passwordformail'
 MAIL_DEFAULT_SENDER = '***'
 
 
-# When using LDAP Auth, setup the ldap server
-#AUTH_LDAP_SERVER = "ldap://ldapserver.new"
-
-# Uncomment to setup OpenID providers example for OpenID authentication
-#OPENID_PROVIDERS = [
-#    { 'name': 'Yahoo', 'url': 'https://me.yahoo.com' },
-#    { 'name': 'AOL', 'url': 'http://openid.aol.com/<username>' },
-#    { 'name': 'Flickr', 'url': 'http://www.flickr.com/<username>' },
-#    { 'name': 'MyOpenID', 'url': 'https://www.myopenid.com' }]
-#---------------------------------------------------
 # Babel config for translations
-#---------------------------------------------------
-# Setup default language
 BABEL_DEFAULT_LOCALE = 'en'
+
 # Your application default translation path
 BABEL_DEFAULT_FOLDER = 'translations'
+
 # The allowed translation for you app
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
@@ -87,9 +65,7 @@ LANGUAGES = {
     'ru': {'flag':'ru', 'name':'Russian'},
     'pl': {'flag':'pl', 'name':'Polish'}
 }
-#---------------------------------------------------
-# Image and file configuration
-#---------------------------------------------------
+
 # The file upload folder, when using models with files
 UPLOAD_FOLDER = basedir + '/app/static/uploads/'
 
@@ -117,3 +93,30 @@ IMG_UPLOAD_URL = '/static/uploads/'
 #APP_THEME = "spacelab.css"
 #APP_THEME = "united.css"
 #APP_THEME = "yeti.css"
+
+
+
+DB={
+"HOST_DB" : "10.230.0.140",
+"PORT_DB" : "5432",
+"USER_DB" : "dataware-ro",
+"PASS_DB" : "jAsPM3xE9ul9WFi",
+"DATABASE_DB" : "dataware"
+}
+
+splunk_conf={
+"host_splunk" : "94.124.133.189",
+"port_splunk" : "8089",
+"username_splunk" : "bzerroug",
+"password_splunk" : "Bachir2015"
+}
+
+GA_conf={
+"client_idGA" : "304171817884-l0utird51gdsn4jilaf4dbao7fki0ul9.apps.googleusercontent.com",
+"project_idGA" : "teak-proton-121517",
+"auth_uriGA" : "https://accounts.google.com/o/oauth2/auth",
+"token_uriGA" : "https://accounts.google.com/o/oauth2/token",
+"auth_provider_x509_cert_urlGA" : "https://www.googleapis.com/oauth2/v1/certs",
+"client_secretGA" : "M41z9gE0jRc4Go8jkI8NNnm6",
+"redirect_urisGA" : ["urn:ietf:wg:oauth:2.0:oob","http://localhost"]
+}

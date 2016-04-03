@@ -1,186 +1,207 @@
 {% extends "appbuilder/base.html" %}
-    {% block content %}
-       <!-- <h2> -->
-	<TABLE BORDER="3" width="500" height="200" cellpadding="3" cellspacing="3" style="text-align:center;">
-      <CAPTION> KPIs des 7 derniers jours </CAPTION>
-       <TR>
-     <TH> KPIS </TH>
-     <TH> Velurs </TH>
-     <TH> Variation vs 2015 </TH>
-      </TR>
-      <TR>
-     <TH> Nombre de commandes </TH>
-     <TD> {{param1[0]}} </TD>
-     <TD> {{param1[1]}} </TD>
-      </TR>
-      <TR>
-     <TH> Chiffre d affaire </TH>
-     <TD> {{param1[2]}} </TD>
-     <TD> {{param1[3]}} </TD>
-      </TR>
-     <TR>
-     <TH> Nb articles moy </TH>
-     <TD> {{param1[4]}} </TD>
-     <TD> {{param1[5]}} </TD>
-      </TR>
-    <TR>
-     <TH> Panier moyen </TH>
-     <TD> {{param1[6]}} </TD>
-     <TD> {{param1[7]}} </TD>
-      </TR>
-	<!-- </h2> -->
-        </TABLE>	
-	<BR>	
-	<TABLE BORDER="5" cellpadding="5" cellspacing="5" style="text-align:center;" >
-	    <TR>
-	        <TD>		
-		<TABLE BORDER="3"  width="300" height="500" cellpadding="3" cellspacing="3" style="text-align:center;">
-		<CAPTION> Taux de remplissage </CAPTION>
-		<TR>
-     		     	<TH> {{param2.keys()[0]}} </TH>
-      			<TH> {{param2.keys()[1]}} </TH>
-		        <TH> {{param2.keys()[2]}} </TH>
-		</TR>
-		<TR>
-                        <TD> {{param2['Date'][0]}} </TD>
-                        <TD> {{param2['No de magasin'][0]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][0]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][1]}} </TD>
-                        <TD> {{param2['No de magasin'][1]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][1]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][2]}} </TD>
-                        <TD> {{param2['No de magasin'][2]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][2]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][3]}} </TD>
-                        <TD> {{param2['No de magasin'][3]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][3]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][4]}} </TD>
-                        <TD> {{param2['No de magasin'][4]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][4]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][5]}} </TD>
-                        <TD> {{param2['No de magasin'][5]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][5]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][6]}} </TD>
-                        <TD> {{param2['No de magasin'][6]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][6]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][7]}} </TD>
-                        <TD> {{param2['No de magasin'][7]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][7]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][8]}} </TD>
-                        <TD> {{param2['No de magasin'][8]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][8]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][9]}} </TD>
-                        <TD> {{param2['No de magasin'][9]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][9]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][10]}} </TD>
-                        <TD> {{param2['No de magasin'][10]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][10]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param2['Date'][11]}} </TD>
-                        <TD> {{param2['No de magasin'][11]}} </TD>
-                        <TD> {{param2['Taux de remplissage'][11]}} </TD>
-                </TR>
-	    </TABLE>
-	    </TD>
-	    <TD>
-		<TABLE BORDER="3" width="450" height="500" cellpadding="3" cellspacing="3" style="text-align:center;">
-                <CAPTION> Potentiel de commandes </CAPTION>
-                <TR>
-                        <TH> Magasin </TH>
-                        <TH> Nombre de commandes realisees aujourdhui </TH>
-			<TH> Variation VS 2015 </TH>
-   			<TH> Nombre de commandes realisees ces 3 derniers jours </TH>
-			<TH> Variation VS 2015 </TH>
-                </TR>
-                <TR>
-                        <TD> {{param3[0][0]}} </TD>
-                        <TD> {{param3[0][1]}} </TD>
-			<TD> {{param3[0][2]}} </TD>
-			<TD> {{param4[0][1]}} </TD>
-			<TD> {{param4[0][2]}} </TD>
-                </TR>                
-		<TR>
-                        <TD> {{param3[1][0]}} </TD>
-                        <TD> {{param3[1][1]}} </TD>
-			<TD> {{param3[1][2]}} </TD>
-			<TD> {{param4[1][1]}} </TD>
-			<TD> {{param4[1][2]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param3[2][0]}} </TD>
-                        <TD> {{param3[2][1]}} </TD>
-			<TD> {{param3[2][2]}} </TD>
-			<TD> {{param4[2][1]}} </TD>
-			<TD> {{param4[2][2]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param3[3][0]}} </TD>
-                        <TD> {{param3[3][1]}} </TD>
-			<TD> {{param3[3][2]}} </TD>
-			<TD> {{param4[3][1]}} </TD>
-			<TD> {{param4[3][2]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param3[4][0]}} </TD>
-                        <TD> {{param3[4][1]}} </TD>
-			<TD> {{param3[4][2]}} </TD>
-			<TD> {{param4[4][1]}} </TD>
-			<TD> {{param4[4][2]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param3[5][0]}} </TD>
-                        <TD> {{param3[5][1]}} </TD>
-			<TD> {{param3[5][2]}} </TD>
-			<TD> {{param4[5][1]}} </TD>
-			<TD> {{param4[5][2]}} </TD>
-                </TR>
-                <TR>
-                        <TD> {{param3[6][0]}} </TD>
-                        <TD> {{param3[6][1]}} </TD>
-			<TD> {{param3[6][2]}} </TD>
-                	<TD> {{param4[6][1]}} </TD>
-		 	<TD> {{param4[6][2]}} </TD>
-		</TR>
-	    </TABLE>
-	    </TD>
-	</TR>
-        </TABLE>
-	<BR>
-	<TABLE BORDER="3">
-	<CAPTION> TTR sur les 7 derniers jours </CAPTION>
-		<TR> 
-			<TD> TTR </TD>
-			<TD> Valeur </TD>
-		</TR>
-		<TR>
-			<TD> TTR site </TD>
-			<TD> {{param5[0]}} </TD>
-		</TR>
-                <TR>
-                        <TD> TTR appli </TD>
-                        <TD> {{param5[1]}} </TD>
-                </TR>
-	</TABLE>
 
-	{% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="panel-title">KPIs des 7 derniers jours</h4> 
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>KPIS</th>
+                <th>Valeurs</th>
+                <th>Variation vs 2015</th>
+            </tr>
+            <tr>
+                <th>Nombre de commandes livrees</th>
+                <td>{{ param1[0] }}</td>
+                <td>{{ param1[1] }}</td>
+            </tr>
+            <tr>
+                <th>Chiffre d affaire</th>
+                <td>{{ param1[2] }}</td>
+                <td>{{ param1[3] }}</td>
+            </tr>
+            <tr>
+                <th>Nb produits moy</th>
+                <td>{{ param1[4] }}</td>
+                <td>{{ param1[5] }}</td>
+            </tr>
+            <tr>
+                <th>Panier moyen (sans FS)</th>
+                <td>{{ param1[6] }}</td>
+                <td>{{ param1[7] }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Taux de remplissage</h4> 
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>{{ param2.keys()[0] }}</th>
+                    <th>{{ param2.keys()[1] }}</th>
+                    <th>{{ param2.keys()[2] }}</th>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][0] }}</td>
+                    <td>{{ param2['No de magasin'][0] }}</td>
+                    <td>{{ param2['Taux de remplissage'][0] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][1] }}</td>
+                    <td>{{ param2['No de magasin'][1] }}</td>
+                    <td>{{ param2['Taux de remplissage'][1] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][2] }}</td>
+                    <td>{{ param2['No de magasin'][2] }}</td>
+                    <td>{{ param2['Taux de remplissage'][2] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][3] }}</td>
+                    <td>{{ param2['No de magasin'][3] }}</td>
+                    <td>{{ param2['Taux de remplissage'][3] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][4] }}</td>
+                    <td>{{ param2['No de magasin'][4] }}</td>
+                    <td>{{ param2['Taux de remplissage'][4] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][5] }}</td>
+                    <td>{{ param2['No de magasin'][5] }}</td>
+                    <td>{{ param2['Taux de remplissage'][5] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][6] }}</td>
+                    <td>{{ param2['No de magasin'][6] }}</td>
+                    <td>{{ param2['Taux de remplissage'][6] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][7] }}</td>
+                    <td>{{ param2['No de magasin'][7] }}</td>
+                    <td>{{ param2['Taux de remplissage'][7] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][8] }}</td>
+                    <td>{{ param2['No de magasin'][8] }}</td> 
+                    <td>{{ param2['Taux de remplissage'][8] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][9] }}</td>
+                    <td>{{ param2['No de magasin'][9] }}</td>
+                    <td>{{ param2['Taux de remplissage'][9] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][10] }}</td>
+                    <td>{{ param2['No de magasin'][10] }}</td>
+                    <td>{{ param2['Taux de remplissage'][10] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param2['Date'][11] }}</td>
+                    <td>{{ param2['No de magasin'][11] }}</td>
+                    <td>{{ param2['Taux de remplissage'][11] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Potentiel de commandes</h4> 
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>Magasin</th>
+                    <th>Nombre de commandes prises hier</th>
+                    <th>Nombre de commandes prises ces 3 derniers jours</th>
+                    <th>Variation VS 2015</th> 
+                </tr>
+                <tr>
+                    <td>{{ param3[0][0] }}</td>
+                    <td>{{ param3[0][1] }}</td>
+                    <td>{{ param4[0][1] }}</td>
+                    <td>{{ param4[0][2] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param3[1][0] }}</td>
+                    <td>{{ param3[1][1] }}</td>
+                    <td>{{ param4[1][1] }}</td>
+                    <td>{{ param4[1][2] }}</td>  
+                </tr>
+                <tr>
+                    <td>{{ param3[2][0] }}</td>
+                    <td>{{ param3[2][1] }}</td>
+                    <td>{{ param4[2][1] }}</td>
+                    <td>{{ param4[2][2] }}</td> 
+                </tr>
+                <tr>
+                    <td>{{ param3[3][0] }}</td>
+                    <td>{{ param3[3][1] }}</td>
+                    <td>{{ param4[3][1] }}</td>
+                    <td>{{ param4[3][2] }}</td> 
+                </tr>
+                <tr>
+                    <td>{{ param3[4][0] }}</td>
+                    <td>{{ param3[4][1] }}</td>
+                    <td>{{ param4[4][1] }}</td>
+                    <td>{{ param4[4][2] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ param3[5][0] }}</td>
+                    <td>{{ param3[5][1] }}</td>
+                    <td>{{ param4[5][1] }}</td>
+                    <td>{{ param4[5][2] }}</td> 
+                </tr>
+                <tr>
+                    <td>{{ param3[6][0] }}</td>
+                    <td>{{ param3[6][1] }}</td>
+                    <td>{{ param4[6][1] }}</td>
+                    <td>{{ param4[6][2] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">TTR sur les 7 derniers jours</h4> 
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr> 
+                    <td>TTR</td>
+                    <td>Valeur</td>
+                </tr>
+                <tr>
+                    <td>TTR site</td>
+                    <td>{{ param5[0] }}</td>
+                </tr>
+                <tr>
+                    <td>TTR appli</td>
+                    <td>{{ param5[1] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

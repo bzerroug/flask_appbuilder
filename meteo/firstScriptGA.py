@@ -8,7 +8,8 @@ from oauth2client import file
 from oauth2client import tools
 
 
-def get_service(api_name, api_version, scope, client_secrets_path):
+def get_service(api_name, api_version, scope):
+  from config import GA_conf
   """Get a service that communicates to a Google API.
 
   Args:
@@ -28,9 +29,20 @@ def get_service(api_name, api_version, scope, client_secrets_path):
   flags = parser.parse_args([])
 
   # Set up a Flow object to be used if we need to authenticate.
-  flow = client.flow_from_clientsecrets(
-      client_secrets_path, scope=scope,
-      message=tools.message_if_missing(client_secrets_path))
+
+  client_idGA =GA_conf["client_idGA"]
+  #project_idGA =GA_conf["project_idGA"]
+  auth_uriGA =GA_conf["auth_uriGA"]
+  token_uriGA =GA_conf["token_uriGA"]
+  #auth_provider_x509_cert_urlGA =GA_conf["auth_provider_x509_cert_urlGA"]
+  client_secretGA =GA_conf["client_secretGA"]
+  redirect_urisGA =GA_conf["redirect_urisGA"]
+ 
+  flow = client.OAuth2WebServerFlow(client_idGA, client_secretGA, scope,
+                               redirect_uri=redirect_urisGA,
+                               auth_uri=auth_uriGA,
+                               token_uri=token_uriGA)
+
 
   # Prepare credentials, and authorize HTTP object with them.
   # If the credentials don't exist or are invalid run through the native client
@@ -103,7 +115,7 @@ def main():
   scope = ['https://www.googleapis.com/auth/analytics.readonly']
 
   # Authenticate and construct service.
-  service = get_service('analytics', 'v3', scope, '/Users/bzerroug/projects/googleAnalyticsAPI/client_secrets.json')
+  service = get_service('analytics', 'v3', scope)
   profile = '97199161'#get_first_profile_id(service) 
   print_results(get_results(service, profile, '2016-03-01', '2016-03-13'))
 
@@ -112,7 +124,7 @@ def main():
 
 def getSessions(profile, datedeb, datefin):
   scope = ['https://www.googleapis.com/auth/analytics.readonly']
-  service = get_service('analytics', 'v3', scope, '/Users/bzerroug/projects/googleAnalyticsAPI/client_secrets.json')
+  service = get_service('analytics', 'v3', scope)
   profile = profile#get_first_profile_id(service) 
   results=get_results(service, profile, datedeb, datefin)
   return results.get('rows')[0][0]
@@ -122,7 +134,7 @@ def get_TTR_site(profile_id, datedeb, datefin):
   # Use the Analytics Service Object to query the Core Reporting API
   # for the number of sessions in the past seven days.
   scope = ['https://www.googleapis.com/auth/analytics.readonly']
-  service = get_service('analytics', 'v3', scope, '/Users/bzerroug/projects/googleAnalyticsAPI/client_secrets.json')
+  service = get_service('analytics', 'v3', scope)
   return service.data().ga().get(
       ids='ga:' + profile_id,
       start_date=datedeb,
@@ -132,17 +144,7 @@ def get_TTR_site(profile_id, datedeb, datefin):
 if __name__ == '__main__':
   main()
   
-#  scope = ['https://www.googleapis.com/auth/analytics.readonly']
-#  service = get_service('analytics', 'v3', scope, 'client_secrets.json') 
-#  api_query = service.data().ga().get(
-#    ids='ga:97200935',
-#    start_date='2016-01-01',
-#    end_date='2016-01-15',
-#    metrics='ga:sessions',
-#    #dimensions='ga:source,ga:keyword',
-#    #sort='-ga:sessions,ga:source',
-#    #filters='ga:medium==organic',
-#   max_results='25')
+
   
   
   

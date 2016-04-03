@@ -13,34 +13,28 @@ from sqlalchemy.ext.automap import automap_base
 #from sqlalchemy import inspect
 #from SplunkExtract import process_compute_slot_filling
 
+from . import appbuilder, db
 from flask import Flask
 from flask.ext.appbuilder import SQLA, AppBuilder
 #from flask.ext.babel import lazy_gettext
 
 from firstScriptGA import getSessions
 
-app = Flask(__name__)
-app.config.from_pyfile('/Users/bzerroug/projects/first_app/config.py')
-db = SQLA(app)
-appbuilder = AppBuilder(app, db.session)
-
 log = logging.getLogger(__name__)
 
-#from flask.ext.appbuilder.security.registerviews import RegisterUserDBView
-#from flask_appbuilder.security.sqla.manager import SecurityManager
-#from .sec_models import MyUser
-#from .sec_views import MyUserDBModelView
 
-
-
-#insp = inspect(engine)
-#columns = [ str(col['name']) for col in insp.get_columns('customer_stats')]
 Now=datetime.datetime.now()
 
 class orders(Model):
+    from config import DB
+    host_db = DB["HOST_DB"]
+    port_db = DB["PORT_DB"]
+    user_db = DB["USER_DB"]
+    pass_db = DB["PASS_DB"]
+    database_db = DB["DATABASE_DB"]
     __bind_key__ = 'postgresql'
     Base = automap_base()
-    engine = create_engine('***')
+    engine = create_engine('postgresql://' +user_db+ ':' +pass_db+ '@' +host_db+ ':' +port_db+ '/' +database_db)
 
     Base.prepare(engine, reflect=True)
     Base.metadata.reflect(engine)
@@ -58,9 +52,15 @@ class orders(Model):
          
 
 class customer_stats(Model):
+    from config import DB
+    host_db = DB["HOST_DB"]
+    port_db = DB["PORT_DB"]
+    user_db = DB["USER_DB"]
+    pass_db = DB["PASS_DB"]
+    database_db = DB["DATABASE_DB"]
     __bind_key__ = 'postgresql'
     Base = automap_base()
-    engine = create_engine('***')
+    engine = create_engine('postgresql://' +user_db+ ':' +pass_db+ '@' +host_db+ ':' +port_db+ '/' +database_db)
 
     Base.prepare(engine, reflect=True)
     Base.metadata.reflect(engine)
