@@ -3,6 +3,7 @@ Meteo for dataware
 
 - Installation:
 
+    ```bash
     # Create and enter in a virtualenv
     virtualenv /tmp/venv
     source /tmp/venv/bin/activate
@@ -10,8 +11,11 @@ Meteo for dataware
     git clone https://github.com/bzerroug/flask_appbuilder
     cd flask_appbuilder
     pip install -e .
+    ```
 
 - Run:
 
+    ```bash
     # Assuming you're in the venv
     dataware-meteo
+    ```
