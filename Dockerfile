@@ -24,5 +24,7 @@ RUN pip install sqlalchemy
 ADD . /app
 WORKDIR /app
 
+EXPOSE 5000
+
 # Install app
 RUN pip install -e .
