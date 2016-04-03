@@ -12,6 +12,7 @@ DEPENDENCIES = [
     'pandas',
     'urllib3',
     'google-api-python-client',
+    'pyasn1>=0.1.8',
 ]
 
 TEST_DEPENDENCIES = [
